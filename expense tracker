@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class ExpenseTracker {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of expenses: ");
+        int n = sc.nextInt();
+
+        double total = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter expense " + i + ": ₹");
+            double expense = sc.nextDouble();
+            total += expense;
+        }
+
+        System.out.println("\n--- Expense Report ---");
+        System.out.println("Total Expense: ₹" + total);
+
+        if (total > 5000) {
+            System.out.println("Spending Level: High");
+        } else if (total > 2000) {
+            System.out.println("Spending Level: Medium");
+        } else {
+            System.out.println("Spending Level: Low");
+        }
+
+        sc.close();
+    }
+}
